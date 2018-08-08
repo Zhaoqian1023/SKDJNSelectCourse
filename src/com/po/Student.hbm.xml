@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.po">
+
+	<class name="Student" table="t_student">
+		<id name="sId" column="sid" type="string">
+		</id>
+		<property name="sName" column="sname" type="string" length="10"  not-null="true"></property>
+		<property name="englishName" column="englishname" type="string" length="20" not-null="false"></property>
+		<property name="sex" column="sex" type="string" length="5" not-null="false"></property>
+		<property name="number" column="number" type="string" length="18" not-null="false"></property>
+		<property name="colleages" column="colleages" type="string" length="10" not-null="true"></property>
+		<many-to-one name="className"  column="classnameid" class="ClassName"></many-to-one>
+		<property name="note" column="note" type="string" length="255" not-null="false"></property>
+		<property name="status" column="status" type="string" length="10" not-null="true"></property>
+		<property name="password" column="password" type="string" length="100" not-null="true"></property>
+	</class>
+	
+</hibernate-mapping>

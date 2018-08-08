@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.po">
+
+	<class name="Course" table="t_course">
+		<id name="cId" column="cid" type="integer" >
+			<generator class="native"></generator>
+		</id>
+		<property name="cNo" column="cno" type="string" unique-key="true" length="20" not-null="true"></property>
+		<property name="cName" column="cname" type="string" length="50" not-null="true"></property>
+		<property name="category" column="category" type="string" length="5" not-null="true"></property>
+		<property name="credits" column="credits" type="integer" length="2" not-null="true"></property>
+		<property name="time" column="time" type="string" length="2" not-null="false"></property>
+		<property name="schoolTime" column="schooltime" type="string" length="20" not-null="false"></property>
+		<property name="years" column="years" type="string" length="20" not-null="false"></property>
+		<property name="maxCount" column="maxcount" type="integer" length="3" not-null="false"></property>
+		<property name="examTime" column="examtime" type="integer" length="2" not-null="false"></property>
+		<property name="checkState" column="checkstate" type="integer" length="1" not-null="false"></property>
+		<property name="details" column="details" type="text" not-null="false"></property>
+		<many-to-one name="teachers"  column="teacherid" class="Teacher"></many-to-one>
+		<set name="openClass" table="t_courseclass" >
+			<key column="cid"/>
+			<many-to-many column="classid" class="ClassName"/>
+		</set>
+
+	</class>
+	
+</hibernate-mapping>

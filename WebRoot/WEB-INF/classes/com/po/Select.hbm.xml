@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.po">
+
+	<class name="Select" table="t_select">
+		<id name="sId" column="sid" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="student" column="studentid" class="Student"></many-to-one>
+		<many-to-one name="course" column="courseid" class="Course"></many-to-one>
+
+	</class>
+	
+</hibernate-mapping>

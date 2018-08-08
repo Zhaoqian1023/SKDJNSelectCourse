@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.po">
+
+	<class name="ClassName" table="t_classname">
+		<id name="cId" column="cid" type="integer">
+		</id>
+		<property name="cName" column="cname" type="string" length="20" not-null="true"></property>
+		<property name="englishName" column="englishname" type="string" length="20" not-null="false"></property>
+	</class>
+	
+</hibernate-mapping>

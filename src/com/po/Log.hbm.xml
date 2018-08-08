@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.po">
+
+	<class name="Log" table="t_log">
+	    <id name="lId" column="lid" type="integer">
+	     	<generator class="native"></generator>
+	    </id>
+		<property name="beginTime" column="begintime" type="string" length="30" not-null="false"></property>
+		<property name="endTime" column="endtime" type="string" length="30" not-null="false"></property>
+		<property name="years" column="years" type="string" length="20" not-null="false"></property>
+		<property name="remark" column="remark" type="string" length="10" not-null="false"></property>
+	</class>
+	
+</hibernate-mapping>

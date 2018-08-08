@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.po">
+
+	<class name="Message" table="t_message">
+		<id name="mId" column="mid" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<property name="aimShow" column="aimshow" type="string" length="20"  not-null="true"></property>
+		<property name="head" column="head" type="string" length="50" not-null="true"></property>
+		<property name="content" column="content" type="text" not-null="false"></property>
+		<property name="times" column="times" type="string" length="20" not-null="false"></property>
+		<many-to-one name="publishMan"  column="teacherid" class="Teacher"></many-to-one>
+		<property name="flag" column="flag" type="integer" length="1" not-null="false"></property>
+	</class>
+	
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.po">
+
+	<class name="TeachingPlan" table="t_teachingplan">
+		<id name="tId" column="tid" type="integer">
+			<generator class="native"></generator>
+		</id>
+		<many-to-one name="className" column="classnameid" class="ClassName"></many-to-one>
+		<property name="years" column="years" type="string" length="20" not-null="true"></property>
+		<property name="requiredScore" column="requiredscore" type="integer" length="3" not-null="true"></property>
+		<property name="electiveScore" column="electivescore" type="integer" length="3" not-null="true"></property>
+		<property name="publicElectiveScore" column="publicelectivescore" type="integer" length="3" not-null="true"></property>
+	</class>
+	
+</hibernate-mapping>
